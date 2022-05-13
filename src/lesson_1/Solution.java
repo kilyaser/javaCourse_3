@@ -26,6 +26,29 @@ public class Solution {
         System.out.println(Arrays.deepToString(intList.toArray()));
         System.out.println(Arrays.deepToString(list.toArray()));
 
+        // check task 3
+        Box boxOranges = new Box<>();
+        boxOranges.add(new Orange());
+        boxOranges.add(new Orange());
+          // проверка работы метода getWeight();
+        System.out.printf("Общий вес: %s\n",
+                boxOranges.getWeight());
+         // проверка метода compare
+        Box boxApple = new Box<>();
+        boxApple.add(new Apple());
+        boxApple.add(new Apple());
+        System.out.println(boxOranges.compare(boxApple));
+        boxApple.add(new Apple());
+        System.out.println(boxApple.getWeight());
+        System.out.println(boxOranges.compare(boxApple));
+         // пересыпаем в другую коробку putIntoAnotherBox
+        Box appleBox2 = new Box<>();
+        appleBox2.add(new Apple());
+        System.out.println(boxApple.putIntoAnotherBox(boxOranges));
+        System.out.println(boxApple.putIntoAnotherBox(appleBox2));
+        System.out.println(appleBox2.getSizeBox());
+
+
 
     }
 
@@ -40,7 +63,7 @@ public class Solution {
             mass[two] = temp;
         }
     }
-    //Написать метод, который преобразует массив в ArrayList;
+    //2 Написать метод, который преобразует массив в ArrayList;
     public static <T> ArrayList getList(T mass){
         ArrayList<T> list = new ArrayList<>();
         list.addAll(Arrays.asList(mass));
